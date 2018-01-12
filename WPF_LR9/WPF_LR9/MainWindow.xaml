@@ -1,0 +1,93 @@
+﻿<Window x:Class="WPF_LR9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_LR9"
+        xmlns:inf="clr-namespace:WPF_LR9.Infrastructure"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <inf:ImageSourceConverter x:Key="ImageConverter"/>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock>Выберите автосалон:</TextBlock>
+            <ComboBox x:Name="cBoxDealer"
+                      Margin="0, 10, 10, 10"
+                      DisplayMemberPath="DealerName"
+                      ItemsSource="{Binding}"
+                      SelectedValuePath="DealerId"
+                      SelectedIndex="0"/>
+            <Button x:Name="btnAutoAdd"
+                    Margin="10, 0, 10, 0"
+                    Content="Добавить авто"
+                    Click="btnAutoAdd_Click"/>
+            <Button x:Name="btnAutoEdit"
+                    Content="Редактировать авто"
+                    Margin="10, 10, 10, 0"
+                    Click="btnAutoEdit_Click"/>
+            <Button x:Name="btnAutoRemove"
+                    Content="Удалить авто"
+                    Margin="10, 10, 10, 10"
+                    Click="btnAutoRemove_Click"/>
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="10, 30, 10, 10"
+                       Text="Адрес:"/>
+            <TextBlock Grid.Column="1"
+                       Text="{Binding ElementName=cBoxDealer,
+                              Path=SelectedItem.DealerAdress}"
+                       Margin="0, 30, 0, 0"/>
+            <TextBlock Margin="10, 0, 0, 0"
+                       Grid.Row="1"
+                       Text="URL:"/>
+            <TextBlock Grid.Column="1"
+                       Grid.Row="1"
+                       Text="{Binding ElementName=cBoxDealer,
+                                        Path=SelectedItem.DealerURL}"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
+            <ListBox x:Name="lBox" DataContext="{Binding ElementName=cBoxDealer, Path=SelectedItem}"
+                     ItemsSource="{Binding Path=Cars}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Width="200"
+                                   Source="{Binding Path=CarImageFileName,
+                                                    Converter={StaticResource ImageConverter}}"/>
+                            <StackPanel Grid.Column="1" Margin="10">
+                                <TextBlock Text="{Binding Path=Model}"/>
+                                <TextBlock Text="{Binding Path=Year}"/>
+                                <TextBlock Text="{Binding Path=Color}"/>
+                                <TextBlock Text="{Binding Path=EngineVolume}"/>
+                                <TextBlock Text="{Binding Path=Price, StringFormat={}{0}$}"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+    </Grid>
+</Window>

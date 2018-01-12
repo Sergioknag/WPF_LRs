@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_LR9", "WPF_LR9\WPF_LR9.csproj", "{F8228796-ABEB-474F-8CCC-2E45C953C085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LR9.DataLayer", "LR9.DataLayer\LR9.DataLayer.csproj", "{4AB0FF88-753B-4EF3-918C-BC1097D3715B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LR9.BusinessLayer", "LR9.BusinessLayer\LR9.BusinessLayer.csproj", "{7D8A961E-29BB-41F6-ACBA-20D35AE1C58C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8228796-ABEB-474F-8CCC-2E45C953C085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8228796-ABEB-474F-8CCC-2E45C953C085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8228796-ABEB-474F-8CCC-2E45C953C085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8228796-ABEB-474F-8CCC-2E45C953C085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB0FF88-753B-4EF3-918C-BC1097D3715B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB0FF88-753B-4EF3-918C-BC1097D3715B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB0FF88-753B-4EF3-918C-BC1097D3715B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB0FF88-753B-4EF3-918C-BC1097D3715B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8A961E-29BB-41F6-ACBA-20D35AE1C58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8A961E-29BB-41F6-ACBA-20D35AE1C58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8A961E-29BB-41F6-ACBA-20D35AE1C58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8A961E-29BB-41F6-ACBA-20D35AE1C58C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
